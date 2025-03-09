@@ -23,16 +23,16 @@ public class adventure : MonoBehaviour
 
     [SerializeField] private GameObject buttons;
 
-    [SerializeField] private AudioSource fire_start;
-    [SerializeField] private AudioSource fire_finish;
-    [SerializeField] private AudioSource fire_idle;
+    [SerializeField] private AudioSource fire_start_sound;
+    [SerializeField] private AudioSource fire_finish_sound;
+    [SerializeField] private AudioSource fire_idle_sound;
+    [SerializeField] private AudioSource teleport_sound;
     public void Start()
     {
          script = Player.GetComponent<TopDownCharacterController>();
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-        buttons.SetActive(true);
         buttons.transform.position = new Vector3 (Player.transform.position.x + 0.3f, Player.transform.position.y + 0.9f, Player.transform.position.z);
 
         if (collision.gameObject.name == "props_altar_1" && Input.GetKey(KeyCode.E))
@@ -50,21 +50,22 @@ public class adventure : MonoBehaviour
         {
             campfire_animator.SetInteger("fire", 1);
             buttons.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            fire_start.Play();
-            fire_idle.Play();
+            fire_start_sound.Play();
+            fire_idle_sound.Play();
         }
         if (collision.gameObject.name == "campfire" && Input.GetKey(KeyCode.Q))
         {
             campfire_animator.SetInteger("fire", 2);
             buttons.gameObject.transform.GetChild(1).gameObject.SetActive(false);
-            fire_finish.Play();
-            fire_idle.Stop();
+            fire_finish_sound.Play();
+            fire_idle_sound.Stop();
         }
     }
 
     IEnumerator teleport()
     {
         script.speed = 0;
+        teleport_sound.Play();
         teleport_obj.SetActive(true);
         teleport_animator.SetBool("is_teleported", true);
         teleport_button_img.SetActive(false);
@@ -85,13 +86,11 @@ public class adventure : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        buttons.SetActive(true);
+        buttons.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         if (collision.gameObject.name == "props_altar_1" || collision.gameObject.name == "props_altar_2")
         {
             teleport_button_img.SetActive(true);
-        }
-        if(collision.gameObject.name == "campfire" && campfire_animator.GetInteger("fire") == 2)
-        {
-             buttons.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
         if(collision.gameObject.name == "campfire" && campfire_animator.GetInteger("fire") == 1)
         {
@@ -102,6 +101,5 @@ public class adventure : MonoBehaviour
     {
         teleport_button_img.SetActive(false);
         buttons.SetActive(false);
-        buttons.gameObject.transform.GetChild(1).gameObject.SetActive(false);
     }
 }
