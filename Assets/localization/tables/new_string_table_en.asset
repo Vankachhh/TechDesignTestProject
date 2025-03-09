@@ -62,6 +62,10 @@ MonoBehaviour:
     m_Localized: choose language
     m_Metadata:
       m_Items: []
+  - m_Id: 69039354433536
+    m_Localized: w,a,s,d - walking
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

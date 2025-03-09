@@ -59,6 +59,10 @@ MonoBehaviour:
     m_Key: choose_language_key
     m_Metadata:
       m_Items: []
+  - m_Id: 69039354433536
+    m_Key: walking_key
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
