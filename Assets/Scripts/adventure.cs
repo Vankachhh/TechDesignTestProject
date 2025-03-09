@@ -86,8 +86,6 @@ public class adventure : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        buttons.SetActive(true);
-        buttons.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         if (collision.gameObject.name == "props_altar_1" || collision.gameObject.name == "props_altar_2")
         {
             teleport_button_img.SetActive(true);
@@ -95,6 +93,12 @@ public class adventure : MonoBehaviour
         if(collision.gameObject.name == "campfire" && campfire_animator.GetInteger("fire") == 1)
         {
             buttons.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        }
+
+        if(collision.gameObject.name == "props_altar_1" || collision.gameObject.name == "props_altar_2" || collision.gameObject.name == "campfire")
+        {
+            buttons.SetActive(true);
+            buttons.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
     }
     public void OnTriggerExit2D(Collider2D collision)
