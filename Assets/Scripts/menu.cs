@@ -11,6 +11,9 @@ public class menu : MonoBehaviour
     [SerializeField] private Animator curtain_animator;
     [SerializeField] private Animator clouds_animator; // уникально для сцены adventure
 
+    [SerializeField] private GameObject menu_buttons;
+    [SerializeField] private GameObject language_buttons;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isPaused != 3)
@@ -56,8 +59,16 @@ public class menu : MonoBehaviour
         isPaused = 3; // чтобы нельзя было нажать паузу во время перехода в другую сцену
         StartCoroutine(To_adventure());
     }
-
-
+    public void menu_buttons_show()
+    {
+        menu_buttons.SetActive(true);
+        language_buttons.SetActive(false);
+    }
+    public void language_buttons_show()
+    {
+        menu_buttons.SetActive(false);
+        language_buttons.SetActive(true);
+    }
     IEnumerator To_menu()
     {
         clouds_animator.SetBool("close", true);

@@ -43,6 +43,22 @@ MonoBehaviour:
     m_Key: to_menu_key
     m_Metadata:
       m_Items: []
+  - m_Id: 12564594425856
+    m_Key: to_first_scene_key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12428535398400
+    m_Key: to_second_scene_key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12767963643904
+    m_Key: select_scene_key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14451263668224
+    m_Key: choose_language_key
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -25,6 +25,7 @@ public class adventure : MonoBehaviour
 
     [SerializeField] private AudioSource fire_start;
     [SerializeField] private AudioSource fire_finish;
+    [SerializeField] private AudioSource fire_idle;
     public void Start()
     {
          script = Player.GetComponent<TopDownCharacterController>();
@@ -50,12 +51,14 @@ public class adventure : MonoBehaviour
             campfire_animator.SetInteger("fire", 1);
             buttons.gameObject.transform.GetChild(1).gameObject.SetActive(true);
             fire_start.Play();
+            fire_idle.Play();
         }
         if (collision.gameObject.name == "campfire" && Input.GetKey(KeyCode.Q))
         {
             campfire_animator.SetInteger("fire", 2);
             buttons.gameObject.transform.GetChild(1).gameObject.SetActive(false);
             fire_finish.Play();
+            fire_idle.Stop();
         }
     }
 

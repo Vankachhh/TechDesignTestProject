@@ -46,6 +46,22 @@ MonoBehaviour:
     m_Localized: menu
     m_Metadata:
       m_Items: []
+  - m_Id: 12428535398400
+    m_Localized: Deuxieme scene
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12564594425856
+    m_Localized: Premiere scene
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12767963643904
+    m_Localized: selectionnez une scene
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14451263668224
+    m_Localized: selectionnez la langue
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
