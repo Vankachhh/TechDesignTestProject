@@ -4,5 +4,18 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/quis_studio.unity
+    guid: 0b744a7658e0d8d4395788cdd4f2382c
+  - enabled: 1
+    path: Assets/Scenes/adventure.unity
+    guid: 86e89bd9e4a9c5245a015cf17e3c0aae
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 2bede4773ed5c70499efbd3f5d86c68b,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 39da4a4c569c9f34c90a7f52db02c980,
+      type: 2}

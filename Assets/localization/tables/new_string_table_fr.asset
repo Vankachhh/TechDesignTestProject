@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: new_string_table_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: eb04503fbf972fc46994b1a407b1ba49, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 29103226880
+    m_Localized: Choisissez l'un des exemples de savoirs traditionnels les plus chics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1414293094400
+    m_Localized: Faites tourner le Tambour!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3513747767296
+    m_Localized: Quelle surprise! Secteur de l'embauche!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7187903545344
+    m_Localized: Recrutement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7441101094912
+    m_Localized: "ESC-une autre sc\xE8ne"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7695376580608
+    m_Localized: Appuyez sur le" S " ou sur le levier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7943339638784
+    m_Localized: menu
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

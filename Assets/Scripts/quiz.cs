@@ -9,12 +9,16 @@ public class quiz : MonoBehaviour
     [SerializeField] private Animator wheel_animator;
     [SerializeField] private int is_pressed = 0;
 
-    [SerializeField] private TMP_Text dialogue_text;
+    [SerializeField] private TMP_Text spin_text;
+    [SerializeField] private TMP_Text win_text;
     [SerializeField] private float typing_speed = 0.01f; // скорость печатани€ текста в диалоговом окне
     [SerializeField] private string full_text;
 
     [SerializeField] private GameObject confetti;
 
+
+    [SerializeField] private AudioSource win_sound;
+    [SerializeField] private AudioSource wheel_spin_sound;
     void Update()
     {   
         if (Input.GetKey(KeyCode.S))
@@ -35,37 +39,25 @@ public class quiz : MonoBehaviour
     }
     IEnumerator lever_up()
     {
+        wheel_spin_sound.Play();
         yield return new WaitForSeconds(3);
         lever_animator.SetBool("is_down", false);
         yield return new WaitForSeconds (1.5f);
+        win_sound.Play();
         confetti.SetActive(true);
-        yield return new WaitForSeconds(2f); // врем€ дл€ ведущего на речь
+        yield return new WaitForSeconds(4f); // врем€ дл€ ведущего на речь
         is_pressed = 0;
         StopCoroutine(lever_up());
     }
     IEnumerator typing_text_after_spin()
     {
         yield return new WaitForSeconds(3);
+        win_text.gameObject.SetActive(true);
+        spin_text.gameObject.SetActive(false);
 
-        dialogue_text.text = "";
-        full_text = " ака€ неожиданность! сектор ¬з€ти€ на работу!";
-        for (int i = 0; i < full_text.Length; i++) 
-        { 
-            dialogue_text.text += full_text[i];
-            dialogue_text.fontSize = 40;
-            yield return new WaitForSeconds(typing_speed); 
-        }
-        yield return new WaitForSeconds(1);
-
-        dialogue_text.text = "";
-        full_text = "¬ращайте барабан!";
-        for (int i = 0; i < full_text.Length; i++)
-        {
-            dialogue_text.text += full_text[i];
-            dialogue_text.fontSize = 60;
-            yield return new WaitForSeconds(typing_speed);
-        }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(6f);
+        win_text.gameObject.SetActive(false);
+        spin_text.gameObject.SetActive(true);
         confetti.SetActive(false);
         StopCoroutine(typing_text_after_spin());
     }
